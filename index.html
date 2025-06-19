@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Panel - Registered Students</title>
+</head>
+<body>
+    <h2>Registered Students</h2>
+    <?php
+    $file = fopen("students.txt", "r");
+    if ($file) {
+        while (($line = fgets($file)) !== false) {
+            echo nl2br($line);
+        }
+        fclose($file);
+    } else {
+        echo "No registrations found.";
+    }
+    ?>
+</body>
+</html>
